@@ -7,3 +7,4 @@
 // responsavel por toda a parte de IO(ler algo de um arquivo ou banco de dados, fazer alguma conexao com
 // a rede) do Node).
 // O JS nasceu para trabalhar com ambientes assicronos.
+// A LIBUV pode ter mais de um event loop caso sua maquina tenha mais de um processador.
