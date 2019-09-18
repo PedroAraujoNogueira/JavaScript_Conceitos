@@ -1,0 +1,37 @@
+<!-- documento.querySelector('.fundoVermelho') -->
+<!-- documento.querySelectorAll('.fundoVermelho') -->
+<!-- documento.querySelector('#textoPrincipal') -->
+<!-- documento.querySelector('[wm-atrib]') -->
+<html>
+    <head>
+        <title>Um Pouco de CSS</title>
+        <link rel="stylesheet" href="B1_umPoucoDeCSS.css">
+        <style>
+            h1 {
+                /* display: none;  */
+                font-size: 20px;
+                background-color: red;
+                position:  absolute;
+                top: 400px;
+                left: 400px;
+                /* right: 400px; */
+            }
+            /* h1, span { 
+                display: none
+            } */
+            .negrito{
+                font-weight: bold;
+            }
+
+            .fundoVermelho {
+                background-color: #f00 /* red, #ff0000*/
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS</h1>
+        <span id = "textoPrincipal" style = "display: none">Texto 1</span><br>
+        <span class = "fundoVermelho negrito">Texto 2</span><br>
+        <span class = "fundoVermelho" wm-atrib>Texto 3</span><br>
+    </body>
+</html>
