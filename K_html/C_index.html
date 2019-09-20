@@ -30,7 +30,24 @@ E depois no diretório onde está o index.html executa o http-server com http-se
             Curso de Web Moderno
         </footer>
         <script>
-        
+            // 1º passo: interceptar o click do link.
+            document.querySelectorAll('a').forEach(link => {
+                    const conteudo = document.getElementById('conteudo')
+                    link.onclick() = function(e){ // A variavel 'e' é o evento que a funcao recebera 
+                                                    //do click.
+                        e.preventDefault() // Vai prevenir que o comportamento padrao(a navegação) ocorra.
+                         // 2º passo: fazer uma chamada ajax pegando o conteudo da outra pagina e 
+                         //jogando dentro da pagina atual.
+
+                        fetch(link.href/*Poderia ser usado getatribute tambem no lugar de href*/)  
+                        // Fetch é uma funcao mais nova, substituindo o xml http request. 
+                        // O fecth é mais simples, baseado em promises e permite fazer uma requisição ajax 
+                        // sem a necessidade de usar jQuery ou qualquer outra biblioteca.                  
+                            .then(resp => resp.text())
+                            .then(html => conteudo.innerHTML = html)
+                        
+                        }
+                    })
         </script>
     </body>
 </html>
