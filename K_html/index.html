@@ -1,0 +1,36 @@
+<!-- Formas de instalar o servidor http do node:
+    1) npm i -g http-server OU 2) npm install -g http-server@0.9.0 -->
+<!-- http-server . //Comando usado para iniciar o servidor.-->
+<!-- http-server -p 9090 .  //Caso a porta 8080 esteja sendo usada é possivel mudar para
+    outra porta atraves do comando a seguir. Nesse caso a outra porta escolhida foi a 9090 --> 
+<!-- Problema: O localhost retorna um ERR_INVALID_REDIRECT
+    Solução: É a versão 0.9.0 do http-server, a porta continua 8080
+Primeiro faz o downgrade com npm install -g http-server@0.9.0
+E depois no diretório onde está o index.html executa o http-server com http-server . -c-1 -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exercícios HTML</title>
+    </head>
+    <body>
+        <header>
+            <h1>Exercícios HTML</h1>
+        </header>
+        <nav>
+            <a href="exercicios/C_teste.html">00 - Teste</a> <!-- Link que navega para o endereço entre
+                                                                    aspas. -->           
+        </nav>
+        <section id = "conteudo"> </section>
+        <footer>
+            <br>
+            Curso de Web Moderno
+        </footer>
+        <script>
+        
+        </script>
+    </body>
+</html>

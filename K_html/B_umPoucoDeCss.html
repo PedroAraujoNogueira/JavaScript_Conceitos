@@ -1,14 +1,26 @@
-<!-- documento.querySelector('.fundoVermelho') -->
-<!-- documento.querySelectorAll('.fundoVermelho') -->
+<!-- documento.querySelector('.fundoVermelho') // Aqui estamos pegando o primeiro elemento que tem
+    a classe de nome fundoVermelho. -->
+<!-- documento.querySelectorAll('.fundoVermelho') // Nesse caso ira ser retornado todos os elementos
+    que tem a classe fundoVermelho. -->
 <!-- documento.querySelector('#textoPrincipal') -->
 <!-- documento.querySelector('[wm-atrib]') -->
+<!-- As 3 formas mais basicas para fazermos uma conexao entre o css e o HTML sao:
+    1) A partir do proprio nome da tag.
+    2) Atraves da propriedade Id.
+    3) Atraves da Classe.
+    4) Algum atributo personalizado criado na Tag. Porem essa ultima forma é feita mais para apicação de 
+        JavaScript em um conjunto de elementos que contenham aquele atributo criado e para se trabalhar 
+        com CSS fica sendo mais utilizado a classe.
+ -->
 <html>
     <head>
         <title>Um Pouco de CSS</title>
-        <link rel="stylesheet" href="B1_umPoucoDeCSS.css">
+        <link rel="stylesheet" href="B1_umPoucoDeCSS.css"> <!-- Usado para buscar a parte CSS. --> 
+         
+        <!-- Conta -->
         <style>
             h1 {
-                /* display: none;  */
+                /* display: none; // Com esse comando todos os titulos h1 da pagina irao sumir. */ 
                 font-size: 20px;
                 background-color: red;
                 position:  absolute;
@@ -16,22 +28,39 @@
                 left: 400px;
                 /* right: 400px; */
             }
-            /* h1, span { 
+            /* h1, span{//Com essa nomenclatura aplicamos o estilo tanto para a tag h1 como para a tag span.
+                           
                 display: none
             } */
-            .negrito{
+            .negrito{ /* Uma classe CSS é criada a partir de + nome da classe. */
                 font-weight: bold;
             }
 
             .fundoVermelho {
-                background-color: #f00 /* red, #ff0000*/
+                background-color: #f00 /* red = #ff0000*, no formato red, green e blue. 
+                                            formato rgb de 0 a 255, EX: 255, 0, 0  */
             }
+
+            /* #textoPrincipal { O simbolo de # é usado para indicar que se trata de um Id.
+                    font-size: 40px;
+                    font-weight: bold;
+                    color: #fff;
+                    padding: 10px;
+                    background-color: #444;
+                } */
+
         </style>
     </head>
     <body>
         <h1>CSS</h1>
+        <!-- Uma forma ainda menos recomendada é mecher com a propriedade style dentro da Tag. Há nao
+            ser que seja feita via JavaScript.-->
         <span id = "textoPrincipal" style = "display: none">Texto 1</span><br>
-        <span class = "fundoVermelho negrito">Texto 2</span><br>
-        <span class = "fundoVermelho" wm-atrib>Texto 3</span><br>
+        <span class = "fundoVermelho negrito">Texto 2</span><br>  <!-- Podemos ter mais de uma classe CSS
+                                                                     Associada a uma tag.  -->
+        <span class = "fundoVermelho" wm-atrib>Texto 3</span><br> 
+        <!-- Podemos criar atributos personalizados  -->
+        <!-- documento.querySelector('[wm-atrib]') // Nesse caso vai ser procurado dentro das Tags 
+            elementos que tenham esse atributo -->
     </body>
 </html>
