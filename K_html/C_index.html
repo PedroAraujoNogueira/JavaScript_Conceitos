@@ -6,7 +6,8 @@
 <!-- Problema: O localhost retorna um ERR_INVALID_REDIRECT
     Solução: É a versão 0.9.0 do http-server, a porta continua 8080
 Primeiro faz o downgrade com npm install -g http-server@0.9.0
-E depois no diretório onde está o index.html executa o http-server com http-server . -c-1 -->
+E depois no diretório onde está o index.html executa o http-server com http-server . -c-1 
+A nomenclatura -c-1 significa que o http-server nao vai ter cache.-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +16,11 @@ E depois no diretório onde está o index.html executa o http-server com http-se
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Exercícios HTML</title>
+        <style>
+            #conteudo{
+                padding: 30px 0px;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -24,7 +30,7 @@ E depois no diretório onde está o index.html executa o http-server com http-se
             <!--  <a href wm-nav = "exercicios/C_teste.html">00 - Teste</a> -->
             <a href="exercicios/C_teste.html">00 - Teste</a> | <!-- Link que navega para o endereço entre
                                                                     aspas. --> 
-            <a href="exercicios/C_temp.html">TEMP</a>          
+            <a href="exercicios/D_texto1.html">01 - texto1</a>          
         </nav>
         <section id = "conteudo"> </section>
         <footer>
