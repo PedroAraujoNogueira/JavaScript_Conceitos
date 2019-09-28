@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>   
+        // O querySelector espera um seletor CSS, ou seja, é muito flexível, ele pode selecionar por id,
+        // por classe, por tag, por atributo, por atributo de um determinado tipo, por elemento que 
+        // esteja dentro de outro, inclusive selecionar por elementos que nao tenham uma determinada 
+        // classe, etc...           
+        document.querySelector('#primeiro').classList.add('destaque')
+
+        // O querySelectorAll nao retorna um htmlCollection como é o caso da funcao 
+        // getElementsByTagName(). O querySelectorAll retorna um nodeList e esse nodeList possui
+        // a funcao forEach, porem nao possui todas as funcoes que um array possui como por exemplo
+        // map, reduce, filter e etc. Caso queiramos que seja um array podemos transformalo em um array
+        // da mesma forma que foi transformado no exemplo passado.  
+        const selecionar = seletor =>
+            document.querySelectorAll('#primeiro').forEach(e => e.classList.add('destaque'))
+
+        const deselecionar = seletor =>
+            documento.querySelectorAll('#primeiro').forEach(e => e.classList.add('destaque'))
+
+        selecionar('div')
+        
+        deselecionar('*') // Aqui temos um seletor universal que vai deselecionar a class destaque de
+        // qualquer elemento.
+        
+        selecionar('.terceiro.ultimo') // Irá selecionar todo mundo que tenha a classe terceiro e ultimo
+        // no mesmo elemento, INDEPENDENTE DA ORDEM, ou seja, poderia ser .ultimo.terceiro que teria o
+        // mesmo efeito.
+
+        deselecionar('*') 
+
+        selecionar(':not(#primeiro)') // Irá selecionar todo mundo que nao tenha id = primeiro.
+
+        deselecionar('*')
+
+        selecionar(':nth-child(1)') // Irá selecionar o primeiro filho de cada elemento,
+        // que possua filhos.
+
+        deselecionar('*')
+
+        selecionar('div:nth-child-type(1)') // Irá selecionar o primeiro elemento de um determinado tipo,
+        // nesse caso o tipo escolhido foi div, ou seja, ira pegar o primeiro elemento de tag div.
+
+        deselecionar('*')
+
+        selecionar('[wb-attrib]') // Irá selecionar todo mundo que tiver esse atributo personalizado.
+    </script>
+</body>
+</html>

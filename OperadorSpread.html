@@ -1,0 +1,208 @@
+https://www.luiztools.com.br/post/4-segredos-do-operador-spread-em-javascript/
+
+4 segredos do operador Spread em Javascript
+Você conhece o operador Spread do JavaScript? Ele é representado por três pontos, sim, o Spread operator é o famoso ‘…’ (três pontinhos para os mais íntimos). Ele basicamente permite que expressões expandam o conteúdo de arrays em locais onde múltiplos elementos são esperados.
+
+Conseguiu entender?
+
+Vou mostrar de um jeito mais prático. Imagine o seguinte código abaixo:
+
+var middle = [3, 4];
+var arr = [1, 2, middle, 5, 6];
+console.log(arr);
+// [1, 2, [3, 4], 5, 6]
+1
+2
+3
+4
+var middle = [3, 4];
+var arr = [1, 2, middle, 5, 6];
+console.log(arr);
+// [1, 2, [3, 4], 5, 6]
+Note que neste caso eu não usei o Spread. Ao colocar o array dentro de outro array (formando um jagged array ou nested array, erroneamente chamado de matriz em algumas universidades) temos um resultado um tanto inusitado ao imprimir ‘arr’.
+
+Agora experimente colocar ‘…’ antes do array middle para você ver o que acontece, como abaixo:
+
+var middle = [3, 4];
+var arr = [1, 2, ...middle, 5, 6];
+console.log(arr);
+// [1, 2, 3, 4, 5, 6]
+1
+2
+3
+4
+var middle = [3, 4];
+var arr = [1, 2, ...middle, 5, 6];
+console.log(arr);
+// [1, 2, 3, 4, 5, 6]
+Spread significa espalhar, ou seja, este operador é usado para ‘espalhar’ os elementos de um array quando interpretado em tempo de execução. Neste último caso, os itens de middle foram espalhados dentro de arr.
+
+Este é o uso default do Spread operator, mas ele é mais poderoso que isso, e é desses segredos que quero falar no artigo de hoje.
+
+Segredo #1 – Cópia de arrays com Spread
+Você sabe como copiar um array em JavaScript? Programadores mais novatos podem achar que isso aqui funciona:
+
+var arr = ['a', 'b', 'c'];
+var arr2 = arr;
+console.log(arr2);
+// ['a', 'b', 'c']
+1
+2
+3
+4
+var arr = ['a', 'b', 'c'];
+var arr2 = arr;
+console.log(arr2);
+// ['a', 'b', 'c']
+Mas infelizmente a vida não é tão simples. Neste caso arr2 não é uma cópia de arr, mas sim o próprio arr, uma vez que a referência de memória de ambos é a mesma. Duvida, então teste isso:
+
+arr2.push('d');
+console.log(arr2);
+// ['a', 'b', 'c', 'd']
+console.log(arr);
+// ['a', 'b', 'c', 'd']
+1
+2
+3
+4
+5
+arr2.push('d');
+console.log(arr2);
+// ['a', 'b', 'c', 'd']
+console.log(arr);
+// ['a', 'b', 'c', 'd']
+Notou que ao adicionar um item no arr2, ele também aparecer no arr? Isso porque eles são os mesmos! Uma das maneiras corretas de fazer isso é usando funções específicas.
+
+Se você programa JavaScript há algum tempo deve conhecer a função slice, certo? É aquela que te permite copiar arrays. Mas você sabia que também conseguimos copiar arrays usando o Spread?
+
+var arr = ['a', 'b', 'c'];
+var arr2 = [...arr];
+console.log(arr2);
+// ['a', 'b', 'c']
+1
+2
+3
+4
+var arr = ['a', 'b', 'c'];
+var arr2 = [...arr];
+console.log(arr2);
+// ['a', 'b', 'c']
+Ao expandirmos o array com o Spread, o valor de seus itens são copiados pra dentro do outro array. Ambos arrays são independentes, então é claramente uma forma de copiar arrays que funciona.
+
+Segredo #2 – Concatenação de arrays com Spread
+E se eu quero juntar dois arrays? Já sacamos que usar o operador de atribuição (=) não resolve. O operador de soma obviamente também não. Você sabe qual a função específica que faz isso no JavaScript? A concat:
+
+var arr = ['a', 'b', 'c'];
+var arr2 = ['d', 'e', 'f'];
+
+arr1 = arr.concat(arr2);
+console.log(arr);
+// ['a', 'b', 'c', 'd', 'e', 'f']
+1
+2
+3
+4
+5
+6
+var arr = ['a', 'b', 'c'];
+var arr2 = ['d', 'e', 'f'];
+ 
+arr1 = arr.concat(arr2);
+console.log(arr);
+// ['a', 'b', 'c', 'd', 'e', 'f']
+Mas você sabia que tem um jeito muito mais fácil de fazer isso usando o Spread operator?
+
+var arr = ['a', 'b', 'c'];
+var arr2 = ['d', 'e', 'f'];
+arr = [...arr, ...arr2];
+console.log(arr);
+// ['a', 'b', 'c', 'd', 'e', 'f']
+1
+2
+3
+4
+5
+var arr = ['a', 'b', 'c'];
+var arr2 = ['d', 'e', 'f'];
+arr = [...arr, ...arr2];
+console.log(arr);
+// ['a', 'b', 'c', 'd', 'e', 'f']
+Bacana, não?!
+
+Segredo #3 – Operações matemáticas com Spread
+Você sabia que é possível usar as funções matemáticas do JavaScript em conjunto com o Spread?
+
+Vamos começar falando do Math.max(), função que retorna o maior de um grupo de números, que passamos a ela por parâmetro.
+
+Math.max();
+// -Infinity
+Math.max(1, 2, 3);
+// 3
+Math.max(100, 3, 4);
+// 100
+1
+2
+3
+4
+5
+6
+Math.max();
+// -Infinity
+Math.max(1, 2, 3);
+// 3
+Math.max(100, 3, 4);
+// 100
+Não tem como passarmos um array por parâmetro nesta function, mas com uma função auxiliar sim, embora fique bem estranho:
+
+var arr = [2, 4, 8, 6, 0];
+function max(arr) {
+  return Math.max.apply(null, arr);
+}
+console.log(max(arr));
+// 8
+1
+2
+3
+4
+5
+6
+var arr = [2, 4, 8, 6, 0];
+function max(arr) {
+  return Math.max.apply(null, arr);
+}
+console.log(max(arr));
+// 8
+Mas e o Spread?
+
+var arr = [2, 4, 8, 6, 0];
+var max = Math.max(...arr);
+console.log(max);
+// 8
+1
+2
+3
+4
+var arr = [2, 4, 8, 6, 0];
+var max = Math.max(...arr);
+console.log(max);
+// 8
+Show, hein!
+
+Segredo #4 – String para Array
+E se você precisar transformar uma string em um array de caracteres? Tipo nos tempos do C-ANSI, lembra?
+
+Essa é bem fácil, como abaixo:
+
+var str = "hello";
+var chars = [...str];
+console.log(chars); 
+// ['h', 'e',' l',' l', 'o']
+1
+2
+3
+4
+var str = "hello";
+var chars = [...str];
+console.log(chars); 
+// ['h', 'e',' l',' l', 'o']
+E é isso por hoje, o artigo foi curto, mas a intenção foi grande! Até a próxima! 😉

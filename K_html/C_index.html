@@ -6,8 +6,16 @@
 <!-- Problema: O localhost retorna um ERR_INVALID_REDIRECT
     Solução: É a versão 0.9.0 do http-server, a porta continua 8080
 Primeiro faz o downgrade com npm install -g http-server@0.9.0
-E depois no diretório onde está o index.html executa o http-server com http-server . -c-1 
-A nomenclatura -c-1 significa que o http-server nao vai ter cache.-->
+Possiveis soluçoes para resolver o problema de cache no servidor http-server.
+1)Limpar cache do navegador.
+
+2) E depois no diretório onde está o index.html executa o http-server com http-server . -c-1 
+A nomenclatura -c-1 significa que o http-server nao vai ter cache.
+
+3) A questão de cache pode ser resolvida de forma bem simples. Com o http-server iniciado, temos a opção de:
+1 - Apertar a tecla F-12 para abrir ferramentas de Desenvolvedor do Chrome "como imagem abaixo.
+2 - Clicar na aba Network, e ticar (Disable cache).
+-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +38,13 @@ A nomenclatura -c-1 significa que o http-server nao vai ter cache.-->
             <!--  <a href wm-nav = "exercicios/C_teste.html">00 - Teste</a> -->
             <a href="exercicios/C_teste.html">00 - Teste</a> | <!-- Link que navega para o endereço entre
                                                                     aspas. --> 
-            <a href="exercicios/D_texto1.html">01 - texto1</a>          
+            <a href="exercicios/D_texto1.html">01 - texto 1</a> |     
+            <a href="exercicios/E_texto2.html">02 - texto 2</a> |
+            <a href="exercicios/F_listas.html">03 - Listas</a> |
+            <a href="exercicios/G_listasAninhadas.html">04 - Listas Aninhadas</a> |   
+            <a href="exercicios/H_links.html">05 - Links</a> |
+            <a href="exercicios/I_tabela.html">06 - Tabela</a> |
+            <a href="exercicios/form/J_form.html">07 - Tabela</a>        
         </nav>
         <section id = "conteudo"> </section>
         <footer>

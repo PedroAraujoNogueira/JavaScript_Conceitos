@@ -1,0 +1,38 @@
+<h1>Links</h1>
+
+<!-- URL Absoluta -->
+<!-- OBS: em URLs absolutas devemos colocar o protocolo no inicio do endereço, no caso, o http, caso
+contrario ele vai ser interpretado como uma URL relativa. -->
+<!-- No primeiro link(google 1) o link vai ser aberto na mesma pagina que o usuario clicou, saindo do link
+atual que o usuario estava e indo para o novo link. -->
+<a id = "inicio" href="http://www.google.com.br"> Google 1 </a> <br>
+<!-- No segundo link(google 2) o link vai ser aberto em outra aba. Esse efeito acontece por causa
+da propriedade target com o valor blank. -->
+<a href="http://www.google.com.br" target = "_blank"> Google 2 </a> <br><br>
+
+<!-- URL Relativa -->
+<!-- 1) Ele substitui o ultimo arquivo por C_index.html. -->
+<a href="C_index.html">Voltar 1</a> <br> 
+<!-- 2) Ele vai chamar C_index.html a partir do diretorio raiz. -->
+<a href="/C_index.html">Voltar 2</a> <br>
+<!-- 3) Ele volta um diretorio e chama o arquivo C_index.htm, podemos fazer ../../C_index.html se 
+quisermos voltar dois diretorios e assim por diante. So nao vai voltar diretorio caso ja esteja no
+diretorio raiz.-->
+<a href="../C_index.html">Voltar 3</a> <br><br><br>
+
+<!-- Esse link aponta para um email. -->
+<a href="mailto:pedroaraujonogueirati@gmail.com">Entre em contato</a> <br><br>
+
+<!-- Abreviações. -->
+<!-- span.teste = <span class="teste"></span> -->
+<!-- div#teste = <div id="teste"></div> -->
+
+<div id="noticias" style= "position: absolute; top:2000px;" >
+    <h1>Notícia Bomba!</h1>
+    <p>Era só um teste!</p>
+    <a href="#inicio">Ir para inicio.</a>
+</div>
+
+<!-- Colocando uma Ancora que direciona para para o id Noticias -->
+<a href="#noticias">Ir para Notícias!</a>
+

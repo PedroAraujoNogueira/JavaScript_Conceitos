@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>              
+        document.getElementById('primeiro').classList.add('destaque')
+
+        // Retorna um array/htmlCollection, porém algumas coisas nao sao possiveis fazer com 
+        // o htmlCollection entao é necessario transformar primeiro em array.
+        const divs = document.getElementsByTagName('div')
+        
+        // Transforma o htmlCollection em um array e percorre cada elemento da lista removendo a
+        // classe destaque desses elementos.
+        // Agora podemos fazer todas as operaçoes e chamar todos os metodos que um array permite.
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+        
+        // Uma outra forma de transforma um htmlCollection em array é atraves do operador esprad.
+        // Nesse caso o operador spread esta 'espalhando' dentro do array os elementos do htmlCollection.
+        // Agora podemos fazer todas as operaçoes e chamar todos os metodos que um array permite.
+        const divsArray = [...divs]
+         
+        // Percorre cada elemento da lista adicionando a classe destaque em cada um desses elementos.
+        divsArray.forEach(e => e.classList.add('destaque'))
+
+        // Retorna um array/htmlCollection com todos os elementos que tenham essa classe definida. 
+        const classeUltimo = document.getElementsByClassName('ultimo')
+        // Nao podemos usar o forEach aqui pois ainda nao transformamos esse htmlCollection em de fato
+        // um array.
+        for(let e of classeUltimo){
+
+            e.classList.remove('destaque')
+        }
+
+    </script>
+</body>
+</html>

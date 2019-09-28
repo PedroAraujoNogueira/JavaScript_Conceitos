@@ -1,0 +1,67 @@
+<!-- Definição e Uso da Tag span.
+A tag <span> é usada para agrupar elementos embutidos em um documento.
+A tag <span> não fornece nenhuma alteração visual por si só.
+A tag <span> fornece uma maneira de adicionar um gancho a uma parte de um texto ou parte de um documento.
+ -->
+
+<h1>Projeto</h1>
+<ul class = "tree">
+    <li>
+        <span wm-folder> backend </span> 
+        <ul>
+            <li>
+                <span wm-folder> app </span>
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venad.js</li>
+                </ul>
+            </li>
+            <li>
+                <span wm-folder> config </span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span wm-folder> frontend </span> 
+        <ul>
+            <li>
+                <span wm-folder> public </span> 
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<script>
+    document.querySelectorAll('[wm-folder]').forEach(folder => {
+        folder.onclick = function(e){
+            // O comando debugger é usado para debugar o condigo a partir da linha em que ele foi escrito.
+            const ul = folder.nextElementSibling // Aqui pegamos o elemento posterior ao elemento que
+            // marcamos com o atributo wm-folder.
+            const d = ul.style.display // Aqui pegamos a visibilidade daquele elemento.
+            ul.style.display = d === 'none' ? 'Block' : 'none' 
+        }
+    })
+</script>
+
+<!-- Muda a forma de renderizar nossa arvore, porem para funcionar temos que colocar valor da classe na
+tag ul mais abrangente. -->
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<!-- OBS: uma tag script nao é interpretada quando usamos o sistema de linguagem a partir do 
+    conteudo.innerHTML. Porem note que se acessarmos no browse direto o endereço desse arquivo entao ele
+vai aparece, pois nao estara mais vinculado aquela estrutura conteudo.innerHTML. -->
+<script> console.log('Imprimir Algo.') </script>
+
+<!-- DESAFIO: ao clicar em cima de public todos os arquivo referentes aquela arvore sejam escondidos e 
+ao clicar de novo sejam mostrados novamente. A mesma coisa em todos os outros elementos das arvores
+exceto os elementos finais da arvore. -->
