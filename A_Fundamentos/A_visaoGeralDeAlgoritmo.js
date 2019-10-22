@@ -5,3 +5,4 @@
 // OBS: Normalmente as linguagens so sao capazes de gerar uma unica saida, mas a linguagem GO é capaz de 
 // gerar varias saidas. 
 // O javaScript é organizado em sentenças de codigo e blocos de código.
+// JavaScript é massa demais
