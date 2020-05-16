@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tamanho Box</title>
+    <style>
+
+        * {
+            /* Se quisermos que o box-sizing: border-box seja aplicada em todos os elementos da aplicação podemos fazer colocando o *, pois o box-sizing é uma propriedade que por padrão não é passada por herança.  
+            */
+            /* box-sizing: border-box; */
+        }
+
+        body {
+            font-size: 45px;
+        }
+
+        /* 
+        box-sizing: border-box considera width = border-left + padding-left + content +                 padding-right + border-right    
+        
+        box-sizing: border-box considera height = border-top + padding-top + content + padding-bottom + border-bottom
+            
+        box-sizing: content-box = content 
+        */
+
+        div {
+            background-color: deepskyblue;
+            width: 100%; /* Por padrão o width se refere a largura do conteúdo e por padrão o padding e o border não estão incluídos nesse cálculo, podendo gerar o efeito de extrapolarem a largura que queriamos para o elemento como um todo. Porém podemos resolver isso com a propriedade box-sizing.*/
+            height: 300px;
+            padding: 100px;
+            border: solid 20px;
+            box-sizing: content-box; /* Considera as dimensoes da caixa como sendo as dimensoes somente do conteúdo, assim o padding e o border são adicionados a mais. */
+            box-sizing: border-box; /* O box-sizing: border-box vai considerar as dimensões(altura e largura) da caixa como sendo da borda para dentro, ou seja, resolveria nosso problema acima no qual o padding e o border extrapolam o 100%, pois o 100% da largura ja estaria considerando o padding e o border.  */ 
+        }
+    </style>
+</head>
+<body>
+    <div>
+        O tamanho do Box é...
+    </div>
+</body>
+</html>

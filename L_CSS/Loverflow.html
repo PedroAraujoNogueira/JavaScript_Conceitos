@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Overflow</title>
+    <style>
+        /* Overflow é quando um elemento passa por cima do outro, extrapolando seu espaço e até invadindo o espaço de outro elemento. */
+        
+        div {
+            font-size: 40px;
+            height: 100px;
+            width: 260px;
+            border: solid 3px;
+            /* Estratégias de overflow */
+            /* overflow: hidden;  */ /* Tudo aquilo que extrapolou o elemento vai ser escondido e não irá aparecer. Podemos notar que tudo que estava extrapolando o espaço daquele elemento foi escondido. */
+            /* overflow: scroll;  */ /* Essa propriedade vai fazer um scroll tanto no eixo x como no eixo y de forma que o conteudo escondido será mostrado atraves do scroll. */
+            overflow-x: scroll; /* Essa propriedade vai fazer um scroll somente no eixo X. */
+            overflow-y: hidden; /* Usado para esconder o scroll no eixo Y, pois por padrao o "overflow-x: scroll" vai gerar scroll tanto na vertical como na horizontal se nao tiver nenhuma outra propriedade scroll acompanhando ele. */
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        TudoFuncionaMuitoBemEmCSS!!!
+        Texto muito grande para caber nessa div.
+        Já pensou qual será o comportamento padrão?
+    </div>
+</body>
+</html>

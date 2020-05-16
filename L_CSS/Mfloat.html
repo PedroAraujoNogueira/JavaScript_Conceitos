@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Float</title>
+    <style>
+        body {
+            background-color: #222;
+        }
+
+        /* A idéia do float é fazer o elemento flutuar e como o elemento está flutuando então outros elementos podem invadir a área desse elemento. Para resolver esse problema de outros elementos invadindo a área do elemento com float podemos colocar a propriedade "clear" no elemento que estava invadindo. */
+
+        .c1 {
+            background-color: red;
+            float: right; /* Faz o elemento com essa classe flutuar para a direita da tela. */
+        }
+
+        .c2 {
+            background-color: green;
+            clear: right; /* Limpa os efeitos que o elemento acima causa nesse elemento por causa da propriedade float: right. */
+            /* clear: both; */
+            /* clear: left; */
+        }
+        
+        .c3 {
+            background-color: blue;
+        }
+
+        .c4 {
+            background-color: orange;
+        }
+
+        div {
+            height: 150px;
+            width: 150px;
+            /* float: right; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+    <div class="c4"></div>
+</body>
+
+</html>

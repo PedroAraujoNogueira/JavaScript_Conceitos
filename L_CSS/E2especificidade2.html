@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://specificity.keegan.st/    CALCULADORA DE ESPECIFICIDADE.*/
+
+        /* Seletores mais específicos.{
+                Mais específicos:
+                1. Inline styles.
+                2. ID.
+                3. Classes, Atributos e Pseudo-Classes.
+                4. Elementos(tags) e Pseudo-Elementos
+            } */
+
+        /* Quanto maior o valor da especificidade, mais prioridade terá, independente da ordem que estejam dispostos dentro da tag style. */
+        body{ font-size: 30px; }
+
+        div { background-color: #00B; color: #fff; } /* Especificidade 1 */
+
+        div[wm-cor] { background-color: darkorange ; } /* Especificidade 11 */
+        
+        div:hover { background-color: purple ; } /* Especificidade 11, como empatou com o de cima então será usado aquele que vinher por último dentro da tag style. */ 
+
+        div.estilo { background-color: green; } /* Especificidade 11, como empatou com o de cima então será usado aquele que vinher por último dentro da tag style. Inclusive o div:hover não irá ter efeito onde o div.estilo estiver sendo aplicado. */
+
+        #unico1, #unico2 { /* Especificidade 100, vai ser aplicado pois é maior que as outras especificidades presentes. */
+            background-color: black;
+        } 
+
+    </style>
+</head>
+
+<body>
+    <div id="unico1" class="estilo" style="background-color: red;"> <!-- O style inline passa por cima de todos os outros. --> 
+        #unico1 vs .estilo vs inline
+    </div>
+    <div id="unico2" class="estilo">#unico2 vs .estilo</div>
+    <div class="estilo" wm-cor>.estilo vs wm-cor</div>
+    <div wm-cor>wm-cor</div>
+    <div class="estilo">.estilo</div>
+    <div>elemento</div>
+</body>
+
+</html>

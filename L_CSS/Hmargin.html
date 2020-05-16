@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Margin</title>
+    <style>
+        body {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        div {
+            border: solid 5px #222;
+        /* float: left; */ /* Quando essa propriedade é colocada então as margins do elemento vazio tem efeito, pois a propriedade float quebra o efeito de margin collapse. */ 
+        }
+
+        .m30 {
+            margin: 30px;
+        }
+
+
+        .mb30 {
+            margin-bottom: 30px;
+        }
+
+        .mt30 {
+            margin-top: 30px;
+        }
+        /* O Margin collapse é o comportamento padrão que acontece em CSS quando duas margins se tocam. Margin collapse é quando duas margins se sobrepõem. Quando o margin collapse acontece automaticamente o maior margin prevalece e o menor é sobreposto. */
+        /* 
+            Essas são três formas de se evitar um margin colapse.
+            float: left / right
+            position: absolute
+            display: inline-block
+        */
+
+    </style>
+</head>
+
+<body>
+    <div class="m30">Conteúdo 1</div>
+    <div class="m30" style="border: none"></div> <!-- Essa div não é um elemento invisível, é apenas um elemento vazio, ou seja, ele está presente no body, porém suas margins somente interferem nas div que estão ao redor se o efeito de margin collapse não ocorrer, quando o efeito de margin collapse ocorre então esse elemento vazio nao interfere em nada as div que estão ao seu redor. A única coisa que é invisível é a borda, que foi tirada para não gerar nenhum efeito. --> 
+    <div class="m30">Conteúdo 2</div>
+    <div class="mb30">Conteúdo 3</div>
+    <div class="mt30">Conteúdo 4</div>
+</body>
+
+</html>

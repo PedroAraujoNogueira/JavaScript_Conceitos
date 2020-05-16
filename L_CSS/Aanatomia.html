@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anatomia CSS</title>
+    <style>
+        .seletor{
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            
+            /* Múltiplos valores */
+            border: solid 5px navy; /* shorthand property. Poderíamos atribuir esses valores para o border de forma separada usando border-color e etc, porém também é possível fazermos dessa forma compactada. */ 
+            font-family: Arial, Helvetica, sans-serif; /* Dessa forma podemos dar multiplas alternativas para a font-family, entao caso nao tenha a primeira delas a seguinte será colocada e assim por diante. */
+
+            /* Funções. Podemos chamar funções predefinidas no CSS. */
+            width: calc(100% - 300px); /* Função calc(), usada para calcular dimensões. */
+            background-color: rgb(34, 153, 189); /* rgb significa red, green e blue. */
+        }
+
+        /* Usando uma pseudo classe */
+        .seletor:hover{ /* Essa pseudo classe será aplicada quando o mouse passar por cima do componente que tiver a classe seletor nesse caso. */
+            background-color: orangered;
+        }
+
+        /* Usando um pseudo elemento */
+        .seletor::first-letter{ /* Usando esse pseudo elemento o estilo será aplicado apenas na primeira letra. */
+            background-color: black;
+            font-size: 60px;
+            font-weight: bold; /* O font-weight: bold deixa a letra mais gordinha. */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="seletor">Conteúdo</div>
+</body>
+
+</html>

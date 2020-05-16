@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Box Model</title>
+    <style>
+        /* O tamanho de uma caixa(box) é dado pelo seu conteúdo, pelo padding e pela borda após o padding. A margin não entra como sendo o tamanho da caixa(box), é simplesmente o espaçamento entre duas caixas(boxes). */
+    
+        body{
+            font-size: 40px;
+        }
+        .c1{
+            background-color: orange;
+        }
+        .c2{
+            background-color: skyblue;
+        }
+        .c3{
+            background-color: tomato;
+        }
+
+        div {
+            float: left; /* O float: left, faz com que os elementos caiam para a esquerda e quebra o display: block da div. */
+
+            /* Tenha cuidado ao utilizar o padding pois ele aumenta a largura e altura do elemento. Por exemplo: Caso seu elemento tenha um width de 200px e você utilize um padding-left de 50px ele vai passar a ter uma largura de 250px. Então, sempre que necessário, compense o padding do elemento reduzindo o width ou o height. Ou então use a propriedade box-sizing adequadamente(Ver na aula de box-sizing). */
+            padding-top: 100px; /* O padding fica computado dentro da largura e da altura do componente. */
+            padding: 10px 50px 100px 150px; /* shortcut: o 10px representa o padding-top e assim por diante seguindo o sentido horário. */
+            padding: 100px 50px; /* Aplica 100px na vertical, ou seja, 100px em cima e 100px em baixo e 50px na horizontal seguindo o mesmo princípio. */
+            padding: 50px; /* Aplica 50px em todas as direções. */
+            
+            /* A própriedade margin tem os mesmo mecanismos de atribuição de valores e shortcuts do padding. */
+            margin: 0px 20px; /* Aplica 0px na vertical, ou seja, 0px em cima e 0px em baixo e 20px na horizontal seguindo o mesmo princípio. */
+            /* Na propriedade margin, podemos atribuir valores negativos, mas tenha cuidado com eles. */
+            /* A propriedade margin adiciona um espaço transparente e ele não pode ser preenchido com nenhuma cor. */
+            /* Outro detalhe importante é que elementos do tipo inline não recebem/aceitam a propriedade margin-top e margin-bottom. Porém elementos do tipo block aceitam. */
+            
+            border: solid 20px black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c1">1</div>
+    <div class="c2">2</div>
+    <div class="c3">3</div>
+</body>
+
+</html>

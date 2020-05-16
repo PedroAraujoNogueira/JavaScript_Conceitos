@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Herança</title>
+    <style>
+        /* Quando no browser no inspecionar elemento virmos um estilo riscado isso significa que ele foi sobreescrito por outro valor que tem maior prioridade.  */
+
+        /* Quando no browser no inspecionar elemento virmos um estilo bem claro, como se estivesse desabilitado, isso significa que esse estilo não é transmitido por herança.  */ 
+        
+        /* Temos como herdar explicitamente uma propriedade que não vem, por padrão, por herança. */
+        body{
+            font-family: monospace; /* Transmitida por herança. */
+            font-size: 40px; /* Transmitida por herança. */
+            border: solid 3px red; /* Não é transmitida por herança. */
+            padding: 50px; /* Não é transmitida por herança. */
+        }
+
+        div{
+            border: inherit; /* Aqui estamos dizendo que queremos que ele herde as configurações de borda do pai. */
+            padding: inherit; 
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Herança</h1>
+    <div>Estou herdando</div>
+</body>
+
+</html>

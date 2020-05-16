@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Display</title>
+    <style>
+        /* ... */
+        /* Por padrão uma div tem o display: block. */
+        /* Por padrão o span tem o display: inline. */
+        /* Por padrão o li tem o display: list-item. */
+
+        body {
+            font-size: 40px;
+            color: #fff;
+            background-color: coral;
+        }
+        
+        ul { padding: 0; }
+        div { background-color: seagreen; }
+        span { background-color: dodgerblue; }
+        li { background-color: purple; }
+
+        /* Outro detalhe importante é que elementos do tipo display: inline não recebem/aceitam a propriedade margin-top e margin-bottom. Porém elementos do tipo display: block aceitam. */
+        div, span, li {
+            width: 50%; /* Observe que o width só tem efeito nas tags div e li, pois o span por padrão tem o display: inline e essa propriedade(inline) não permite o efeito do height nem do width. */
+            width: 200px; /* Observe que o mesmo efeito constatado acima ocorre aqui. */
+            height: 80px; /* Observe que o height só tem efeito nas tags div e li, pois somente elas */
+            padding-top: 30px; /* As tres tags suportaram o padding-top, assim como suportam o padding em qualquer direção. */
+            text-align: center;
+            
+            display: block; /* Essa propriedade faz com que cada elemento tenha sua própria linha(mesmo que a width seja alterada para menos de 100%), ou seja, o proximo elemento sempre vem na próxima linha. Por padrão o display: block ocupa toda a largura da página(ou seja, width 100%). O display: block considera o width e o height, além de permitir o margin-top e o margin-buttom. */
+            
+            display: inline; /* Com o display inline os componentes ficam na mesma linha. O display: inline não permite o efeito do height nem do width. Outro detalhe importante é que embora elementos do tipo display: inline aceitem o padding em qualquer direção eles não recebem/aceitam a propriedade margin-top e margin-bottom. Porém elementos do tipo display: block aceitam. */
+            
+            display: inline-block; /* O display: inline-block vai funcionar em parte como o display: inline, ou seja, ele vai continuar mantendo os elementos na mesma linha, porém vai levar em consideração o width e o height. Outro ponto importante é que ele quebra o efeito do margin collapse. */
+        }
+    </style>
+</head>
+
+<body>
+    <div>Texto 1</div>
+    <span>Texto 2</span>
+    <span>Texto 3</span>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</body>
+
+</html>

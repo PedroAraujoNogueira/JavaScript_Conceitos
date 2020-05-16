@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #01</title>
+    <style>
+        /*
+            Olhar PDF do capítulo de CSS.
+        */
+
+        /*
+            Font
+            - rem: relativo à font raiz, ou seja, a font do html ou do navegador(eu acho).
+            - em: relativo à font do elemento pai.
+        */
+
+        /* 
+        A propriedade width em CSS é relativo ao elemento-ancestal mais próximo. Mas e se você quisesse usar a largura ou a altura da viewport ao invés da largura do elemento-pai? Isso é exatamente o que as unidades vh, vw, vmin e vmax proporcionam. O vmin vai ser a menor dimensão da tela e o vmax é a maior dimensão da tela.
+
+        A medida vh é igual a 1/100 da altura da viewport. Então, por exemplo, se a altura do navegador é 900px, 1vh equivale a 9px e, analogamente, se a largura da viewport é 750px, 1vw equivale a 7.5px. 
+        */
+        .unidades-absolutas {
+            position: absolute; /* Essa propriedade foi usada somente para que fosse possível usar também as propriedads top e left.*/
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px;
+            width: 4cm; /* Muito raro o uso em cm, foi só para demonstrar que é possível. */
+            height: 20mm;/* Muito raro o uso em mm, foi só para demonstrar que é possível. */
+
+            /* As propriedades top e left so foram aplicadas por que colocamos a propriedade "position". Essas duas propriedade necessitam da propriedade "position" para terem efeito, mesmo suas unidades estando em px. */
+            top: 150px; /* Essa propriedade diz a distancia do topo da página até o elemento. */
+            left: 200px;
+        }
+
+        .unidades-relativas {
+            position: absolute; /* Essa propriedade foi usada somente para que fosse possível usar também as propriedads bottom e right.*/
+            font-size: 4em; /* O "em" significa que o tamanho da font será de 4 vezes o tamanho de sua font pai. É uma boa prática usarmos fontes relativas. Pois a font vai se adaptar de tamanho dependendo do tamanho de font que o usuário escolher para o navegador. */
+            padding: 5%;
+            border: solid 1vw #222; /* 1vw significa que a largura da borda será de 1 centesimo da width da página(independente da largura do pai). */
+            margin: .8%;
+            width: 20vw;
+            height: 15vh;
+            bottom: 5%;
+            right: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="unidades-absolutas">Opa!</div>
+    <div class="unidades-relativas">Epa!</div>
+</body>
+
+</html>

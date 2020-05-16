@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Media Query</title>
+    <style>
+
+        /*
+            CONTEÚDO DA INTERNET.
+
+            @media(max-width:770px) {
+            .texto{
+                    color:red
+                }
+            }
+            No exemplo acima significa que para qualquer mídia que a largura seja de até 770px, mesmo que seja uma TV, Monitor e até uma Impressora, a regra CSS ali contida vai ser aplicada.
+
+            Já nesse exemplo abaixo significa que em mídias do tipo screen e com telas de até 770px de largura a regra vai ser aplicada. (esse e é muito importante, pois o CSS só é aplicado se as duas regras screen e max-width corresponderem)
+
+            @media screen and (max-width: 770px) {
+                .texto{
+                    color:red;
+                }
+            }
+
+            SOBRE O AND:
+
+            Veja que a sua regra @media pode ser bem complexa, e vc pode encadear vários parâmetros que deve ser atendidos para a regra ser aplicada. Por exemplo:
+
+            @media only screen 
+            and (min-device-width: 320px) 
+            and (max-device-width: 480px)
+            and (-webkit-min-device-pixel-ratio: 2) {
+                body { line-height: 1.4; }
+            }
+
+            Nesse outro exemplo o seletor only significa que apenas para mídia screen e com telas até 600px a regra vai ser aplicada. Essa regra não será aplicada a outras mídias como a print por exemplo
+
+            @media only screen and (max-width: 600px) {
+                body {
+                    color:red;
+                }
+            }
+
+            EXEMPLOS DE USO:
+
+            Vamos supor que vc tenha um elemento na cor Amarela, que aparece bem na Tela do Computador, mas quando for imprimir o Amarelo não vai ficar legal e vc gostaria que ele ficasse Preto, como vc poderia resolver isso? Simples, usando @media only print. Então no seu CSS vc teria algo como:
+
+            div {
+                background-color: yellow;
+                width: 100px;
+                height: 100px;
+            }
+
+            @media only print {
+                div {
+                    background-color: black;
+                }
+            }
+            
+            Repare que com o exemplo acima quando vc der um Ctrl+P a div não vai aparecer Amarela, vai ficar Preta!
+
+            SOBRE O ONLY:
+
+            O operador only é usado para aplicar um estilo somente se uma consulta inteira corresponder e é útil para impedir que navegadores mais antigos apliquem estilos selecionados. Se você usar o operador only, deverá especificar um tipo de mídia explícito. (no caso se o tipo de mídia é screen, print ou speech)
+
+            UM ESCLARECIMENTO SOBRE O ONLY:
+
+            Ao que parece o atributo only também pode ser usado para que navegadores antigos ignorem a regra de css contida no @media, uma vez que eles podem não fazer distinção entre os tipos de mídia diferentes, veja que eles podem não ver diferença entre um @media screen de um @media print, para esses navegadores tudo seria uma coisa só. Então para fazer com que eles ignorem a regra se usa o only.
+
+            Resumindo: Nos navegadores que entendem a diferença entre print e screen não há necessidade do only, porém, nos navegador que não entendem as diferenças entre as mídias se usa o only para que ele não reconheça a tag e a ignore.
+        */
+
+        div {
+            /* Muito importante quando estamos trabalhando com responsividade. */
+            font-size: 40px;
+            margin: 20px;
+            padding: 20px;
+            background-color: coral;
+            border: solid 5px;
+            display: none;
+        }
+
+        @media (max-width: 600px){ /* Essa classe CSS só será aplicada caso a width da viewport for no maximo 600px. */
+            .muito-pequeno{
+                display: block;
+            }
+        }
+
+        @media (max-width: 1000px), (orientation: portrait) { /* Essa classe CSS só será aplicada caso a width da viewport for no maximo 1000px OU a orientação da página esteja em modo portrait(retrato). Note que a VIRGULA serve como um OU. */
+            .pequeno-retrato {
+                display: block;
+            }
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {  /* Essa classe CSS só será aplicada caso a width da viewport for maior ou igual a 500px E menor ou igual a 1000px. */
+            .intervalo {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="muito-pequeno">Muito Pequeno</div>
+    <div class="pequeno-retrato">Pequeno ou Retrato</div>
+    <div class="intervalo">Intervalo</div>
+    
+</body>
+</html>

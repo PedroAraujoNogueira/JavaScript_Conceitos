@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #02</title>
+    <style>
+        /*  */
+        
+        .fora {
+            /* Por padrão uma div tem largura de 100% e altura 0. A altura da div vai assumindo a altura do conteudo dentro dela. */
+            /* position: relative; */
+            background-color: orange;
+            height: 400px;
+            width: 400px;
+            padding: 50px;
+        }
+
+        .dentro {
+            background-color: mediumvioletred;
+            height: 100px;
+            width: 100%;
+            position: static; /* Position: static é o valor padrão do position. Ele faz com que o width,em porcentagem, considere somente o espaço do conteúdo, ou seja, width 100% significaria 100% do espaço do conteúdo e width 20% significaria 20% do espaço do conteúdo. */
+            position: relative; /* O position: relative tambem faz com que o width, em porcentagem, considere somente o espaço do conteúdo. */
+            position: absolute; /* Quando temos o position: absolute o width, em porcentagem, considera o espaço como sendo o do conteúdo mais o do padding. */
+            /* position: fixed; */
+             /* Quando temos o position: fixed o width, em porcentagem, considera o espaço como sendo o tamanho do viewport. */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="fora">
+        <div class="dentro"></div>
+    </div>
+</body>
+</html>

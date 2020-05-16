@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cores</title>
+    <style>
+        /* 
+            https://www.w3schools.com/colors/colors_hsl.asp -> Padrão HSL(não é tão comum).
+            H = Hue, vai de 0 a 360 e é o espectro de cores.
+            Saturation = vai de 0% até 100%, e defini o quão "viva" é a cor.
+            Lightness =  vai de 0% até 100%, e defini a opacidade ou a transparência.
+            
+            Esses sites ajudam a formar a paleta de cores que serão usadas na sua aplicação.
+            https://coolors.co/ 
+            http://paletton.com/
+
+        */
+
+        body {
+            background-color: green; /* O nome da cor que quer usar. */
+            background-color: #f67809; /* Valores hexadecimais, onde os dois primeiros caracteres são referentes ao vermelho os dois seguintes são referentes ao verde e os dois últimos são referentes ao azul. */
+            background-color: #abc; /* Valores hexadecimais de forma simplificada. Quando os caracteres de cada cor se repetem, como por exemplo #aabbcc, então podemos simplificar colocando apenas #abc. */
+            background-color: #edc91280 ; /* Valores hexadecimais, sendo aplicado uma transparência na cor. Os dois últimos caracteres são referentes a cor e vai de 00 a FF. */
+            background-color: #e928 ; /* Valores hexadecimais na forma simplificada, sendo aplicado uma transparência na cor. O último caracter é referente a cor e vai de 0 a F. */
+            background-color: rgb(55, 110, 220); /* Chamando a função rgb(red, green, blue), onde os valores podem ir de 0 a 255. */
+            background-color: rgba(55, 110, 220, 0.5); /* Chamando a função rgba(red, green, 
+            blue, alpha) que é a possibilidade de aplicarmos um percentual de transparência no último parâmetro que vai de 0 até 1. */
+            background-color: hsl(299, 58%, 50%) /* hsl(hue, saturation, lightness). Onde o primeiro parametro vai de 0 até 360 e o segundo e terceiro parametros vão de 0% até 100%. */
+
+            /* Alguns prós e contras: Por exemplo, no RGB você deixar uma cor mais escura ou mais clara é complicado por que te obriga a mexer na cor inteira para isso, enquanto que no HSL deixar mais claro ou mais escuro é bem mais simples já que uma das propriedades é justamente a luminosidade da cor. Ou seja, fica na questão de escolha do desenvolvedor mesmo. */
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

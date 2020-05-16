@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        
+        /* . O seletor p.key seleciona só os elementos <p> nomeados com a classe key. */
+
+        /* ul, ol {  */
+            /* O padding 0 é adicionado tanto para o ul quanto para o ol */
+            /* padding: 0;
+        } */
+
+        /* Seleciona todo e qualquer elemento da tela, ou seja, todas as tags. */
+        /* * { 
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Seleciona todos os elementos que possuem a classe "tag". */
+        /* .tag {
+            color: #ff0;
+            background-color: #f77; 
+        } */
+
+        /* Seleciona todos os elementos que possuem o ID "aprovados". */
+        /* #aprovados {
+            color: #ff0;
+            background-color: #f77; 
+        } */
+
+        /* Child */
+        /* Dentro dos elementos com ID "aninhado", seleciona o primeiro filho, somente se o primeiro filho for uma tag DIV. */
+        /* #aninhado > div {
+            color: #ff0;
+            background-color: #f77; 
+        } */
+
+        /* Descendant */
+        /* Dentro dos elementos com ID "aninhado", seleciona quaisquer descendentes que sejam tag section. */
+        /* #aninhado section {
+            color: #ff0;
+            background-color: #f77; 
+        } */
+
+        /* Adjacent Sibling */
+        /* Vai procurar na página por irmãos adjacentes, ou seja, onde logo após a tag p vem a tag ul e elas pertencem ao mesmo pai. Achando esses irmãos adjacentes o estilo será aplicado somente na tag ul. */
+        /* p + ul {
+            color: #ff0;
+            background-color: #f77; 
+        } */
+
+        /* Genera Sibling */
+        /* Vai procurar na página por irmãos, ou seja, uma tag p e uma tag ol que tenham o mesmo pai, porém nao precisam ser adjacentes mas a tag p deve vir primeiro, obrigatoriamente. Achando esses irmãos o estilo será aplicado somente na tag ol. */
+        /* p ~ ol {
+            color: #ff0;
+            background-color: #f77; 
+        } */
+
+        /* Vai procurar todos os elementos que tenham 'feira' como propriedade. Olhar html abaixo.  */
+        /* [feira] {
+            color: #ff0;
+            background-color: #f77; 
+        } */
+
+        /* Existe tambem a possibilidade de associarmos um determinado atributo com o seu valor. Ou seja, vai selecionar elementos que tenham o atributo feira e que esse atributo tenha o valor casa.  */
+        /* [feira=casa] {
+            color: #ff0;
+            background-color: #f77; 
+        } */
+
+        /* Existe tambem a possibilidade de associarmos um determinado atributo com parte de seu valor. Ou seja, vai selecionar elementos que tenham o atributo feira e que esse atributo tenha em seu valor o nome empresa. */
+        /* [feira~=empresa] {
+            color: #ff0;
+            background-color: #f77; 
+        } */
+
+        /* Verifica se no atributo feira tem a substring 'sa' */
+        /* [feira*=sa] {
+            color: #ff0;
+            background-color: #f77; 
+        } */
+
+         /* Vai procurar uma tag span que seja o primeiro filho de alguém, ou seja, uma tag span que seja o primeiro filho de outra tag. Podemos alterar e pedir que a tag span seja o terceiro filho de outra tag ou qualquer outra ordem, bastando apenas alterar o numero dentro dos parênteses.  */
+         /* span:nth-child(1) {
+            color: #ff0;
+            background-color: #f77; 
+        } */
+
+        /* Vai procurar os filhos impares de uma tag section e aplicar o estilo nesses filhos. Para selecionarmos os filhos pares bastaria colocarmos "even" dentro dos parenteses. */
+        /* section > :nth-child(odd) {  
+            color: #ff0;
+            background-color: #f77; 
+        } */
+
+        /* Vai procurar o segundo elemento do tipo span, filho da tag section, e aplicar o estilo. */
+        section > span:nth-of-type(2) {  
+            color: #ff0;
+            background-color: #f77; 
+        }
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+            </ul>
+            <ul class='tag' feira='escritorio empresa'>
+                <li>Café</li>
+                <li>Água</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag nolabel'>
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

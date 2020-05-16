@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Texto</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <style>
+        /* Propriedades do CSS para trabalhar com textos. */
+        * {
+            margin: 0;
+        }
+
+        html{
+            font-size: 28px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        div {
+            font-size: 50px;
+        }
+
+        p {
+            /* Valores padrões */
+            font-size: 1em; /* Relativo à font do elemento pai. */
+            font-size: 100%; /* O tamanho da font vai ser 100% da definida no pai, ou seja, se o pai tem font de 16px entao ela tambem vai ter font de 16px. */
+            font-size: 16px;
+            font-size: 12pt; /* 1px equivale a 0.75pt */
+            
+            /* Unidades Absolutas */
+            font-size: 96px; /* 96px é equivalente a 72pt(72 pontos) que é equivalente a 1in(uma polegada). */
+            font-size: 72pt;
+            font-size: 1in; /* Não é muito usada. */
+
+            /* Unidades relativas. */
+            font-size: 2.2em;
+            font-size: 2.2rem;
+            font-size: 50vh;
+            font-size: 10vw;
+
+            /* Família de fontes */
+            font-family: monospace; /* Todas as letras ocupam o mesmo espaço. */
+            font-family: Georgia, serif; /* Vai procurar a fonte Georgia e caso não ache vai aplicar a fonte serif padrão que tiver. Fonte serifada é quando tem pontinhas na fonte. */
+            font-family: Verdana, sans-serif; /* Vai procurar a fonte Verdana e caso não ache vai aplicar a fonte sans-serif padrão que tiver. Fonte não serifada é quando a fonte é mais redondinha. */
+            font-family: 'Indie Flower', cursive; /* Vai procurar a fonte 'Indie Flower' e caso não ache vai aplicar a fonte cursive padrão que tiver. Fonte cursive é uma fonte mais parecida com nossa escrita. */
+
+            /* Outras propriedades */
+            font-weight: 400 ; /* Peso da fonte, vai de 100 até 900 e só pode valores multiplos de 100. Quando maior o valor mais grossa a letra fica. */
+            font-weight: bold; /* Peso da fonte com valores pré-definidos. por exemplo: bold, regular e etc... */
+            font-style: italic; /* Aqui daremos o estilo da fonte. */
+            text-transform: uppercase; /* Aqui daremos um padrão para as letras, por exemplo: uppercase significa que todas as letras serão maiúsculas, lowercase significa que todas as letras serão minúsculas, capitalize significa que a primeira letra de cada palavra será maiúscula. */
+
+            /* text-decoration: overline underline line-through;  */
+            /* Coloca linhas em baixo do texto, em cima do texto, sobre o texto... de acordo com seu gosto.*/
+
+            word-spacing: 50px; /* Espaço entre as palavras. Pode receber valores negativos tambem como -10px por exemplo, dessa forma as palavras irão se aproximar mais. */
+            letter-spacing: 20px; /* Espaço entre as letras da palavra. */
+            line-height: 1.5em; /* Altura da linha. */
+            text-align: right; /* Alinha o texto a direita. */ 
+        }
+
+        .botao { /* O objetivo dessa classe será transformar a tag 'a', que é um link, em uma aparência parecida com a de um botão. É uma transformação bem usada no dia a dia. */
+            font-size: 28px;
+            text-decoration: none; /* Usamos isso para tirar a linha em baixo do link. */
+            padding: 10px 30px;
+            border-radius: 25px;
+        }
+
+        .destaque {
+            color: #fff;
+            background: tomato;
+            box-shadow: 2px 2px 1px 1px #000;
+        }
+
+        .destaque:active { /* Aqui estamos usando uma pseudo-classe chamada active. Ela vai ser acionada quando o link estiver ativo(quando o click for feito). A '.destaque:active' tem uma especificidade maior que a .destaque, ou seja, suas propriedades vão ter preferência. */
+            box-shadow: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+            Que texto
+            <br>legal!!!
+        </p>
+    </div>
+    <a href="http://google.com" class="botao destaque">Google</a>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style>
+        /* ... */
+
+        div {
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+        }
+
+        .static { /* Nem o left nem o top fazem efeito quando a position é static. Aqui não colocamos o position: static pois ele já é o padrão. No position: static cada componente leva em consideração o componente anterior. */
+            top: 100px;
+            left: 100px;
+            background-color: steelblue;
+        }
+
+        .fixed { /* No position: fixed ele leva em consideração o bottom, o right, o left e o top. */
+            /* IMPORTANTE: observe que no fixed, ao rolarmos a página para baixo, o elemento envolvido pelo fixed continua fixo na página. */
+            position: fixed;
+            bottom: 30px;
+            right: 0;
+            background-color: tomato;
+        }
+
+        .relative1 { /* O position: relative também leva em consideração o componente anterior, ou seja,        ele é sempre relativo ao componente anterior. */
+                /* No position: relative ele leva em consideração o bottom, o right, o left e o top, porém ele leva em consideração tomando como base o componente anterior, diferente do fixed e do absolute que tomam como base a viewport para os valores de bottom, o right, o left e o top. */
+            position: relative;
+            left: 50px; /* Vai dar uma distancia de 50px do lado esquerda, contando como referencia o lado do esquerdo do componente anterior. */
+            top: 5px; /* Vai dar uma distancia de 50px em relação a parte inferior do ultimo elemento antes dele. */
+            background-color: seagreen;
+        }
+
+        .absolute1 { /* No position: absolute ele leva em consideração o bottom, o right, o left e o top, tomando como base a viewport ou o elemento pai(depende do tipo de position do elemento pai)para aplicar esses valores. Como é uma posição absoluta então ele pode ficar por cima de outros elementos. */
+            position: absolute;
+            left: 350px;
+            top: 120px;
+            background-color: violet;
+        }
+
+        .relative2 {
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: slategrey;
+        }
+
+        .absolute2 { /* Se o pai desse absolute2 for position: relative então o elemento .absolute2 vai ser absoluto somente dentro do seu componente pai, porém se o pai de absolute2 for static ou fixed então o elemento absolute2 vai ser absoluto em relação a viewport. */
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+
+        .sticky { /* Observe que o elemento position: sticky vai continuar no mesmo canto independente do valor de 'top', porém ao rolar o scroll para baixo, ao atingir o elemento que está com position: sticky e top: 0 então ele vai seguir o scroll da página mantendo a posição top: 0 em relaçao a pagina. Ou seja, é como se a position: sticky só fosse ativada quando o scroll da tela chega até a posição especificada pelo top, bottom, left e right.*/
+            position: -webkit-sticky; /* O safari precisa desse comando pois não reconhece o position: sticky por padrão. */
+            position: sticky;
+            background-color: #777;
+            top: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <div class="static">Static (Padrão)</div> <!-- No position: static cada componente leva em consideração o componente anterior. --> 
+    <div class="fixed">Fixed</div>
+    <div class="relative1">Relative</div>
+    <div class="absolute1">Absolute</div>
+
+    <div class="relative2">
+        <div class="absolute2"></div>
+    </div>
+
+    <div class="sticky">Sticky</div>
+    <p style="padding-bottom: 2000px;">Opa</p>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+        /* Ordem de especificidade em linhas gerais... 
+            1. Regra com !important , porém não é recomendavel ficar usando o important.
+            2. Seletores mais específicos.{
+                Mais específicos:
+                1. Inline styles.
+                2. ID.
+                3. Classes, Atributos e Pseudo-Classes.
+                4. Elementos(tags) e Pseudo-Elementos
+            }
+            3. Em caso de empate a última regra processada ganha.
+
+
+        */
+        
+        p.observacao { /* A tag seguida de uma classe é mais específica do que só a classe ou só a tag. Note que o background-color da 'tag.classe' ganha mesmo sendo declarada antes da classe, isso acontece pq nesse caso oq conta é a especificidade e não a posição que elas foram declaradas no arquivo. */
+            padding: 5px 60px;
+            background: linear-gradient(to right, red, yellow);
+        }
+
+        .observacao { /* A classe é mais específica do que uma tag. Note que o background-color da classe ganha mesmo sendo declarada antes da tag p, isso acontece pq nesse caso oq conta é a especificidade e não a posição que elas foram declaradas no arquivo. */
+            background-color: #5F5;
+            border: dashed 5px;
+            padding: 200px !important; /* O !important "burla" a ordem de especificidade e deixa esse padding com mais especificidade do que o padding de "p.observacao". */
+            font-size: 40px;
+        }
+        
+        p {
+            background-color: #aaa;
+        }
+
+    </style>
+</head>
+
+<body>
+    <p class='observacao'>Olha essa observação!!!!</p>
+</body>
+
+</html>

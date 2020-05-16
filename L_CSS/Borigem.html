@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Origem CSS: Externo, Interno e Inline</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+    </style>
+    <!-- OBS: Se tirarmos o rel="stylesheet" vamos perceber que o arquivo externo.css não será processado. -->
+    <link rel="stylesheet" href="./css/externo.css">
+</head>
+
+<body style="background-color: coral;"> <!-- Quando o estilo está inline ele possui uma preferência maior em aplicar seu estilo em relação as outras formas de aplicar estilo. Porém não é uma boa prática o uso do style inline direto no html. -->
+    <h1>E agora?</h1>
+</body>
+
+</html>

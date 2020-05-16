@@ -53,7 +53,7 @@ sayMyName()
 /*
 GLOBAL SCOPE No BROWSER
 - No browser o mesmo exemplo mostrado no Node reagiria de forma diferente, ah nnao ser que usemos o 'use strict'.
-- No browser o this é sem o objeto que esta sendo referenciado naquele momento.
+- No browser o this é sempre o objeto que esta sendo referenciado naquele momento.
 
 this.name = 'Valeska'
 console.log(this)

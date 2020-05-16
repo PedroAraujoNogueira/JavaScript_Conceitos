@@ -27,10 +27,12 @@ const pessoa = {
     falar1: console.log(saudacao)
 }
 
+// global.saudacao = "Alguma coisa"
+
 pessoa.falar()
 const falar1 = pessoa.falar
 falar1()
-
+console.log()
 const falarDePessoa = pessoa.falar.bind(pessoa) // No bind voce passa o objeto no qual voce quer que seja resolvido o this.
 falarDePessoa()
 
