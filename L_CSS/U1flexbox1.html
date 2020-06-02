@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #01</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        /* O flexbox é unidirecional(escolhemos organizar em linha ou coluna), diferente do CSSgrid que é bidimensional. O CSSgrid é interessante para fazer o layout macro da página(vendo ela como um todo) enquanto o flexbox é usado para organizar algumas partes da página. */
+        
+        /* No momento em que definimos o eixo principal(main axis) o outro eixo fica sendo o eixo secundario(cross axis). Olhar no PDF os "main start", "main end", "main size", "cross start", "cross end", "cross size", "flex container" e "flex item". */
+        
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+            margin: 5px;
+        }
+
+        .big {
+            font-size: 1.5em;
+        }
+
+        .flex-container{
+            
+            display: flex; /* Fazendo isso estamos dizendo que essa classe CSS passou a ser um flex-container, podendo usar as propriedades do Modulo CSS flexbox. */
+            /* Por padrão o "display: flex" alinha os nossos itens horizontalmente, ou seja, por padrão o "main axis" é a linha. */
+            /* A propriedade que está, por padrão, alinhando os itens horizontalmente se chama 
+                flex-direction e por padrão ela vem "flex-direction: row". */
+
+            flex-direction: column; /* Alinha os flex itens na vertical. */
+            flex-direction: column-reverse; /* Olhar no U0flexbox. */
+            flex-direction: row-reverse; /* Olhar no U0flexbox. */
+            flex-direction: row; /* Olhar no U0flexbox. */   
+            width: 50%;
+         
+            flex-wrap: wrap; /* Com esse comando o flex-container vai respeitar o 50% da largura e vai colocar os flex-itens que estiverem ultrapassando essa largura na linha de baixo. */
+            flex-wrap: wrap-reverse; /* Ao acontecer a quebra de linha(a mesma que ocorre no flex-wrap: wrap) os valores que deviam ir para a linha de baixo continuam em cima e os da linha de cima vão para baixo. */
+         
+            flex-flow: row wrap; /* Essa propriedade mistura as propriedades flex-direction e o flex-wrap. */
+            height: 200px;
+            flex-flow: column-reverse wrap;
+            flex-flow: row wrap;
+            
+            /* justify-content é referente ao eixo principal. */
+            /* justify-content: a propriedade justify-content alinha o conteúdo do contêiner flexionado no eixo principal, que por padrão (no caso da web) é o eixo horizontal. */
+            justify-content: flex-start; /* Valor padrão. */
+            justify-content: flex-end; 
+            justify-content: center;
+            justify-content: space-around; /* Vai colocar um espaço igual entre todos os itens e deixar uma distancia da tela para a borda. Somente disponível no justify-content. */ 
+            justify-content: space-between; /* Vai colocar um espaço igual entre todos os itens. Somente disponível no justify-content. */
+
+            /* Cross Axis(eixo secundário)*/
+            height: 400px;
+            align-items: stretch; /* Valor padrão. */
+            align-items: baseline; /* Vai alinhar os itens pela linha de baixo dos itens. */
+            align-items: flex-start; /* Vai alinhar os itens começando pela linha superior da caixa flexbox. */
+            align-items: flex-end; /* Vai alinhar os itens começando pela linha inferior da caixa flexbox. */
+            align-items: center; /* Vai alinhar os itens no centro da caixa flexbox. */
+
+            /* align-content, funciona quando temos multiplas linhas. Ele organiza as linhas dentro do box. */
+            align-content: flex-start; /* Todas as linhas vão para o inicio do flex-container. */
+            align-content: flex-end; /* Todas as linhas vão para o fim do flex container. */
+            align-content: center; /* Vai centralizar as linhas dentro do flex container. */
+            align-content: space-around;
+            align-content: space-between;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="flex-container tag nolabel">
+        <div class="tag nolabel">1</div>
+        <div class="tag nolabel">2</div>
+        <div class="tag nolabel big">3</div>
+        <div class="tag nolabel">4</div>
+        <div class="tag nolabel">5</div>
+        <div class="tag nolabel">6</div>
+        <div class="tag nolabel">7</div>
+        <div class="tag nolabel">8</div>
+        <div class="tag nolabel">9</div>
+        <div class="tag nolabel">10</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

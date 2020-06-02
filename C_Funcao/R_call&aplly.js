@@ -28,3 +28,12 @@ console.log(getPreco.apply(carro)) // Passa o contexto que quer ser usado como p
 console.log(getPreco.call(carro, 0.17, '$')) // No call os parametros sao passados individualmente.
 console.log(getPreco.apply(carro, [0.17, '$'])) // No aplly os parametros sao passados em um array.
 
+// O apply e o call mudam o 'this' e já chamam a funcao. Já o bind muda o 'this' quando a funcao for  chamada. Tem uma diferença sutil.
+
+// No ES5, tipicamente é usado o método Function.prototype.apply() para chamar uma função com o valor de this e argumentos fornecidos como um array (ou um array-like object). Com o Reflect.apply isso se torna menos verboso e mais fácil de entender.
+
+// Reflect.apply(target, thisArgument, argumentsList)
+// Parâmetros
+// target: Função que será chamada.
+// thisArgument: O valor de "this" que será usado pela function do target.
+// argumentsList: Um objeto do tipo array que especifica os argumentos com que o target deve ser chamado.

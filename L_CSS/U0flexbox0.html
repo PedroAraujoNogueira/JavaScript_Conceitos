@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        /* Para conseguirmos trabalhar com flexbox temos que colocar "display: flex" na tag que estiver por fora dos elementos(flex item) que queremos manipular com o flexbox.
+        */
+        /* No flexbox tudo se baseia no comando flex-direction. */
+        html, body, #app {
+            /* Colocamos isso para conseguirmos visualizar o column reverse. */
+            height: 100%;
+            margin: 0;
+        }
+
+        #app {
+            /* Por padrão o "display: flex" alinha os nossos itens horizontalmente. */
+            display: flex;
+
+            /* A propriedade que está, por padrão, alinhando os itens horizontalmente se chama 
+                flex-direction e por padrão ela vem "flex-direction: row". */
+            /* O row está dizendo que a direção dos itens filhos do #app vao sempre seguir
+                na mesma horizontal(enquanto houver espaço). */
+            /* O column alinha os itens na vertical. */
+            /* O row-reverse alinha os itens na horizontal porem començando a partir do canto direito    da tela. */
+            /* O column-reverse alinha os itens na vertical porém començando a partir do canto inferior esquerdo da tela. OBS: para conseguirmos visualizar isso precisamos fazer nosso corpo(body) e app ocuparem a altura total do documento. */ 
+            flex-direction: row;
+            
+            /* Os valores padroes de align-items e justify-content sao flex-start que juntos alinham      o item no canto superior direito. */
+            /* Valores que podem ser passados: 
+                center: alinha no centro.
+                flex-end: alinha o item para o fim da linha ou coluna. */
+            /*  space-between: vai colocar um espaço igual entre todos os itens. Somente disponível       no justify-content. */
+            /*  space-around: vai colocar um espaço igual entre todos os itens e deixa uma distancia 
+                da da tela borda. Somente disponível no justify-content. */
+            /* O align-items sempre vai alinhar nossos itens no eixo contrário ao eixo do flex-direction. */
+            align-items: center ;
+            justify-content: space-between ;
+            /* Com o comando "flex-wrap: wrap" temos uma quebra de linha ao inves de uma barra de rolagem. */
+            flex-wrap: wrap;
+            /* O comando align-content serve para alinhar os elementos quando eles estao em mais de uma linha(quando a linha foi quebrada). Ele possui as mesma propriedades do comando 
+                justify-content */
+            align-content: center;
+        }
+
+        .box {
+            width: 400px;
+            height: 60px;
+            margin: 5px;
+            background: red;
+            /* Redimensionamento do item: 
+                1. O comando "flex-grow: 1;" diz que aceita ser aumentado para caber na totalidade da tag pai
+                    dele.(flex-grow: 0 é o valor padrão.) */
+            flex-grow: 1;
+            /* 2. O comando "flex-shrink: 1" diz que nosso item tem a capacidade de se espremer para caber na 
+                tag pai(flex-shrink: 1 é o valor padrão.). Se colocarmos flex-shrink: 0 então o item nao vai
+                ser espremido e será criada uma barra rolagem
+            dele.  */
+            flex-shrink: 0; 
+            /* Podemos juntar essas duas propriedades usando o comando "flex", pois ele é a soma do 
+                flex-grow e do flex-shrink sendo o primeiro número correspondente ao valor do flex-grow 
+                e o segundo numero correspondente ao valor do flex-shrink. */
+            /* flex: 0 0; OBS: NAO FUNCIONOU COMO O ESPERADO PARA O PRIMEIRO VALOR SENDO 0. */ 
+        }
+        .red{
+            /* A ordem dos componentes pode ser alterada em determinadas ocasioes atraves do comando 
+                order.  */
+            order: 1; 
+        }
+
+        .green {
+            background: green;
+            order: 2;
+        }
+
+        .blue {
+            background: blue;
+            order: 0;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document 2 </title>
+</head>
+<body>
+    <div id = "app">
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>
+</body>
+</html>

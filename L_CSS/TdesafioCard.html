@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Card</title>
+    <style>
+        /* ... */
+
+        .curso {
+            /* float: left; */ /* o float: left já aplica por padrão o vertical-align: top; */
+
+            display: inline-block; /* Ao invés de usar o float: left podemos usar o display: inline-block, porém se usarmos o display: inline-block temos que ter o cuidado de usar tambem a propriedade "vertical-align: top" para alinhar os itens a partir do topo, caso contrário iremos notar que se faltar a imagem em algum dos quadrados então os quadrados ficarão desalinhados pois por padrao eles se alinha de acordo com o "vertical-align: baseline"(alinhado pela linha de baixo). */
+            
+            vertical-align: top; /* Só vamos precisar dessa propriedade caso estejamos usando o display: inline-block, pois por padrão o display: inline-blick aplica o vertical-align: baseline enquanto o float: left já aplica por padrão o vertical-align: top;. */
+            
+            box-sizing: border-box;
+            height: 300px;
+            width: 260px;
+            padding: 5px;
+            margin: 30px 20px;
+            box-shadow: 1px 1px 10px gray;
+        }
+
+        .curso img {
+            width: 100%;
+            max-height: 50%;
+        }
+
+        .curso-info {
+            overflow: hidden;
+            height: 85px; /* Essa propriedade fez com que os dois "Quadros" não se desalinhassem ao aumentar o tamanho da letra da classe .curso-info  */
+            padding: 10px;
+        }
+        
+        .curso-info h4{
+            font-size: 1.4em;
+            font-weight: 100;
+            margin: 0;
+        }
+
+        .curso-preco  {
+            float: right;
+            padding: 10px;
+        }
+
+        .preco-de {     
+            color: red;
+            text-decoration: line-through;
+        }
+
+        .preco-por {
+            color: green;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Card</h1>
+
+    <h2>Objetivo</h2>
+    <img src="http://files.cod3r.com.br/curso-web/card.png" height="340" alt="Objetivo">
+
+    <h2>Resultado</h2>
+    <div>
+        <div class="curso">
+            <img src="http://files.cod3r.com.br/curso-web/curso1.jpg"  alt="Objetivo"/>
+            <div class="curso-info">
+                <h4>Docker: Ferramenta essencial para Desenvolvedores</h4>
+                <p>Prof. Fulano</p>
+            </div>
+            <div class="curso-preco">
+                <span class="preco-de">R$80,00</span>
+                <span class="preco-por">R$50,00</span>
+            </div>
+        </div>
+        <div class="curso">
+            <img src="http://files.cod3r.com.br/curso-web/curso2.jpg" alt="Objetivo"/>
+            <div class="curso-info">
+                <h4>Web Moderno com Javascript + Projetos</h4>
+                <p>Prof. Sicrano Filho</p>
+            </div>
+            <div class="curso-preco">
+                <span class="preco-de">R$80,00</span>
+                <span class="preco-por">R$50,00</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
