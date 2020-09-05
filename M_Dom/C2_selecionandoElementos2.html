@@ -25,7 +25,7 @@
             document.querySelectorAll('#primeiro').forEach(e => e.classList.add('destaque'))
 
         const deselecionar = seletor =>
-            documento.querySelectorAll('#primeiro').forEach(e => e.classList.add('destaque'))
+            documento.querySelectorAll('#primeiro').forEach(e => e.classList.remove('destaque'))
 
         selecionar('div')
         
@@ -38,16 +38,16 @@
 
         deselecionar('*') 
 
+        // O exemplo abaixo usa a pseudo-classe :not
         selecionar(':not(#primeiro)') // Irá selecionar todo mundo que nao tenha id = primeiro.
 
         deselecionar('*')
 
-        selecionar(':nth-child(1)') // Irá selecionar o primeiro filho de cada elemento,
-        // que possua filhos.
+        selecionar(':nth-child(1)') // Irá selecionar o primeiro filho de cada elemento que possua filho.
 
         deselecionar('*')
 
-        selecionar('div:nth-child-type(1)') // Irá selecionar o primeiro elemento de um determinado tipo,
+        selecionar('div:nth-of-type(1)') // Irá selecionar o primeiro elemento de um determinado tipo,
         // nesse caso o tipo escolhido foi div, ou seja, ira pegar o primeiro elemento de tag div.
 
         deselecionar('*')

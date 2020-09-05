@@ -1,0 +1,5 @@
+Do ponto de vista funcional não há diferença, ambos irão submeter o formulário da mesma forma. Segundo a especificação, se atributo type estiver ausente da tag <button>, o comportamento padrão será de submit.
+
+O <input type="submit">, quando estiver dentro de um elemento do formulário, enviará o formulário quando clicado.
+
+Outro 'botão' especialmente útil é o <input type="reset">que limpará o formulário.

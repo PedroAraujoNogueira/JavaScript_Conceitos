@@ -1,0 +1,9 @@
+display:none retira o elemento do layout da página. Mas você ainda pode continuar manipulando ele no DOM.
+
+visibility:hidden deixa de mostrar o elemento, ou seja, ele deixa de ser visível na página mas seu espaço continua ocupado, ou seja, o layout da página não é alterado por causa disto. É como você apagasse uma luz ali mas a lâmpada continua lá.
+
+<span style="display: none;">texto escondido</span> teste.
+<span style="visibility: hidden;">texto escondido</span> teste.
+<span style="opacity: 0;">texto escondido</span> teste.
+
+O visibility: hidden; é mais parecido com o opacity: 0; (sendo que este ultimo permite diferentes degraus de visibilidade/opacidade).
