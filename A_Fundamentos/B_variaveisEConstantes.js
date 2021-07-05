@@ -2,7 +2,7 @@ var a = 3
 let b = 4
 // uma grande diferença entre VAR e LET é que a mesma variavel do tipo VAR pode ser declarada
 // várias vezes dentro de um mesmo escopo, enquanto a let nao pode.
-// let é a forma mais moderna no javaScript de se criar variaveis.
+// let é a forma mais moderna no javaScript de se criar variaveis, sempre tentar usar dessa forma.
 
 var a = 30 
 // let b = 40, dar erro pois a variavel let b ja foi declarada.
